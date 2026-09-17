@@ -1,0 +1,7 @@
+# Copy to terraform.tfvars (gitignored) and fill in.
+# aws_profile = "crisis-admin"
+# region      = "us-west-2"
+
+# From GitHub repo Settings > Pages, after adding the custom domain:
+# github_pages_challenge_name  = "_github-pages-challenge-the-north-west-clothing"
+# github_pages_challenge_value = "<value GitHub shows you>"
