@@ -88,6 +88,33 @@ Adapted from an observed reference aesthetic (not copied): a
 streetwear/apparel gallery. Documented here as direction, not pixel spec — real
 values chosen at implementation and tuned to Crisis Clothing's own brand.
 
+**Brand assets (existing):**
+
+- **Logo:** a flowing **Spencerian/soda-fountain script wordmark** ("Crisis")
+  with a sweeping swash underline. Source art at
+  `~/Dropbox/Crisis Clothing/Brand/` (transparent PNG in white and navy; a
+  300×300 and a profile-pic crop also exist). High-res (4068×2674).
+- **Existing colorways / palette (never formalized, derived from the assets):**
+  - Navy `#132452` (sampled from `Crisis_navy.png`)
+  - White (reversed-out)
+  - Green + yellow: vivid green field (~`#37C22B`) with bright yellow lettering
+    (~`#F5E10A`) — approximate; exact-sample from a source file if formalizing.
+- No preferred UI/body fonts yet.
+
+**Type pairing principle:** the script wordmark is the brand's single ornate
+signature — used for the logo/wordmark only. Everything else (headlines, body,
+labels) uses a stark modern grotesque + monospace system, so the script stays
+special and never competes with itself.
+
+**Palette direction (to confirm):** anchor on the existing colorways rather than
+inventing new ones. Two viable moods:
+  - *Classic:* navy + off-white paper + charcoal text, with green or yellow as a
+    single accent. Versatile, lets garment photography lead.
+  - *Loud:* bold green/yellow full-bleed hero and section fields, navy/charcoal
+    for text on light areas. Punchier, more streetwear.
+  Default if unspecified: Classic (navy-anchored), with a bold accent, since it
+  keeps product imagery dominant per the guardrails below.
+
 **Principles:**
 
 - **Type is the hero.** Oversized, tightly-tracked grotesque display headlines
