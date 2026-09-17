@@ -106,14 +106,28 @@ signature — used for the logo/wordmark only. Everything else (headlines, body,
 labels) uses a stark modern grotesque + monospace system, so the script stays
 special and never competes with itself.
 
-**Palette direction (to confirm):** anchor on the existing colorways rather than
-inventing new ones. Two viable moods:
-  - *Classic:* navy + off-white paper + charcoal text, with green or yellow as a
-    single accent. Versatile, lets garment photography lead.
-  - *Loud:* bold green/yellow full-bleed hero and section fields, navy/charcoal
-    for text on light areas. Punchier, more streetwear.
-  Default if unspecified: Classic (navy-anchored), with a bold accent, since it
-  keeps product imagery dominant per the guardrails below.
+**Palette — chosen mood: LOUD (green/yellow forward).** Anchor on the existing
+colorways, not new hues.
+
+- **Green** `#37C22B` (approx — exact-sample from a source file when formalizing)
+  — primary brand field / hero and section-band background.
+- **Yellow** `#F5E10A` (approx) — the wordmark on green, plus highlights, kicker
+  labels, and crop/registration marks.
+- **Navy** `#132452` and near-black **charcoal** — body/heading text on light
+  zones.
+- **Off-white paper** — the background for the gallery grid and detail reading
+  areas, so garment photography reads cleanly.
+
+**Application:**
+  - Site header: yellow script wordmark on a full-bleed green field.
+  - Hero / section bands: bold full-bleed green (with occasional yellow),
+    oversized grotesque titles.
+  - Gallery cards and detail content sit on **paper**, not on the loud fields —
+    the color blocks frame the photography rather than sit under it (guardrails
+    below). Yellow accents + optional halftone texture on dividers/empty states.
+  - Contrast note: yellow-on-green and navy-on-paper must meet WCAG AA for any
+    real text; loud pairings are reserved for large display type and non-text
+    graphics where they pass, with a legible fallback pairing for body copy.
 
 **Principles:**
 
