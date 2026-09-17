@@ -5,11 +5,6 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 # Cancel superseded runs; only one deploy at a time.
 concurrency:
   group: pages
@@ -18,14 +13,19 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Build Astro site
-        uses: withastro/action@v6
+        uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6.x
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
