@@ -77,9 +77,46 @@ the `image()` helper resolves relative paths).
 ### Shared UI
 
 - `src/layouts/BaseLayout.astro` — `<head>` (title, meta, favicon), site header
-  (Crisis Clothing wordmark linking home) and footer, and shared styling. Clean,
-  minimal, image-forward aesthetic; the designs are the content.
+  (Crisis Clothing wordmark linking home) and footer, and shared styling per the
+  Visual direction below.
 - `src/components/DesignCard.astro` — one gallery card.
+
+### Visual direction
+
+Adapted from an observed reference aesthetic (not copied): a
+**brutalist-editorial × airbrushed-Y2K × retro-computing** language that suits a
+streetwear/apparel gallery. Documented here as direction, not pixel spec — real
+values chosen at implementation and tuned to Crisis Clothing's own brand.
+
+**Principles:**
+
+- **Type is the hero.** Oversized, tightly-tracked grotesque display headlines
+  (Helvetica Now / Neue Haas Grotesk / Inter-tight family), near edge-to-edge,
+  for section titles and the site wordmark. Body copy in a plain neutral sans.
+  Small **uppercase, letter-spaced monospace "kicker" labels** above content
+  blocks (e.g. a design's release date or a "PURCHASE" label).
+- **Bold, saturated color fields over minimal-white.** High-contrast full-bleed
+  sections rather than a timid all-white page. A restrained palette: one or two
+  confident brand hues (to be set — Crisis Clothing's own), deep near-black
+  charcoal for text, off-white paper. Airbrushed/gradient accents allowed but
+  used sparingly so garment imagery stays the focus.
+- **Print-production + retro-GUI motifs, as texture not gimmick.** Corner
+  **crop/registration marks** framing the gallery grid; optional **1-bit
+  dithered/halftone** treatment for section dividers or empty states; monospace
+  detail strings (SKU, release date, edition) as fine print. These are accents;
+  they must never compete with the design photography.
+- **Editorial grid.** Generous whitespace, a real column grid, release dates and
+  counts set as deliberate typographic elements.
+
+**Guardrails (apparel-specific):**
+
+- The **product images are the content** — every stylistic motif yields to the
+  garment photography. On the gallery, cards are image-forward; type framing is
+  secondary.
+- Motifs are applied with restraint (a framing mark, a mono label), not layered
+  all at once. Accessibility and legibility (contrast, focus states, tap targets)
+  are non-negotiable and take precedence over any retro effect.
+- Fonts loaded self-hosted or via a permitted provider; no layout shift.
 
 ### Repository layout
 
