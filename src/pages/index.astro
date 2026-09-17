@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import DesignCard from '../components/DesignCard.astro';
+import { sortedPublishedDesigns } from '../lib/designs';
+
+const designs = sortedPublishedDesigns(await getCollection('designs'));
+---
+<BaseLayout
+  title="Crisis Clothing — Designs"
+  description="The gallery of designs created by Crisis Clothing."
+>
+  <section class="hero">
+    <p class="kicker" style="color: var(--charcoal)">The archive</p>
+    <h1>Designs</h1>
+  </section>
+
+  {designs.length === 0 ? (
+    <p>No designs yet.</p>
+  ) : (
+    <ul class="grid">
+      {designs.map((design) => (
+        <li>
+          <DesignCard
+            slug={design.id}
+            title={design.data.title}
+            releaseDate={design.data.releaseDate}
+            image={design.data.image}
+          />
+        </li>
+      ))}
+    </ul>
+  )}
+</BaseLayout>
+
+<style>
+  .hero {
+    background: var(--green);
+    border: 3px solid var(--charcoal);
+    margin: 1.5rem 0 2.5rem;
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .hero h1 { font-size: clamp(3rem, 12vw, 7rem); color: var(--charcoal); }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2rem 1.5rem;
+  }
+</style>

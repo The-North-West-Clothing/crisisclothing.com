@@ -1,0 +1,81 @@
+:root {
+  --green: #37c22b;
+  --green-deep: #2ba321;
+  --yellow: #f5e10a;
+  --navy: #132452;
+  --charcoal: #141414;
+  --paper: #f7f5ef;
+  --paper-line: #e2ddcf;
+
+  --font-display: 'Archivo Variable', system-ui, sans-serif;
+  --font-body: 'Archivo Variable', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --measure: 68ch;
+  --gutter: 1rem;
+  --maxw: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  font-synthesis: none;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin: 0 0 0.4em;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* Monospace kicker label */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+}
+
+.wrap { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+
+/* Loud green header band with the script wordmark reversed out */
+.site-header {
+  background: var(--green);
+  border-bottom: 3px solid var(--charcoal);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  padding-block: 0.9rem;
+}
+.site-header a.brand { display: inline-block; }
+.site-header img.wordmark { height: 40px; width: auto; }
+
+.site-footer {
+  background: var(--charcoal);
+  color: var(--paper);
+  margin-top: 4rem;
+}
+.site-footer .wrap {
+  padding-block: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }

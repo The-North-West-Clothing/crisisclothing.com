@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# Astro build output
+dist/
+.astro/
+
+# Worktrees (harness-managed, never committed)
+.claude/worktrees/
+
+# OpenTofu
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/.terraform.tfstate.lock.info
+infra/crash.log
+infra/*.tfvars
+
+# OS / editor
+.DS_Store
+*.log

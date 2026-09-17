@@ -1,0 +1,37 @@
+---
+import '@fontsource-variable/archivo';
+import '@fontsource/ibm-plex-mono';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Crisis Clothing — home">
+          <img class="wordmark" src="/crisis-wordmark-white.png" alt="Crisis Clothing" width="61" height="40" />
+        </a>
+      </div>
+    </header>
+    <main class="wrap">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">© {year} Crisis Clothing</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+---
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatReleaseDate, sortedPublishedDesigns } from '../../lib/designs';
+
+export async function getStaticPaths() {
+  const designs = sortedPublishedDesigns(await getCollection('designs'));
+  return designs.map((design) => ({
+    params: { slug: design.id },
+    props: { design },
+  }));
+}
+
+const { design } = Astro.props;
+const { title, releaseDate, image, gallery, links } = design.data;
+const { Content } = await render(design);
+---
+<BaseLayout title={`${title} — Crisis Clothing`}>
+  <article class="detail">
+    <p class="kicker">{formatReleaseDate(releaseDate)}</p>
+    <h1>{title}</h1>
+
+    <div class="hero-image">
+      <Image src={image} alt={title} width={1200} height={1500} />
+    </div>
+
+    <div class="body">
+      <Content />
+    </div>
+
+    {gallery && gallery.length > 0 && (
+      <div class="gallery">
+        {gallery.map((shot, index) => (
+          <Image src={shot} alt={`${title} — view ${index + 2}`} width={800} height={1000} />
+        ))}
+      </div>
+    )}
+
+    {links && links.length > 0 && (
+      <section class="purchase">
+        <p class="kicker">Purchase</p>
+        <div class="buttons">
+          {links.map((link) => (
+            <a class="buy" href={link.url} rel="noopener noreferrer" target="_blank">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <p class="back"><a href="/">← All designs</a></p>
+  </article>
+</BaseLayout>
+
+<style>
+  .detail { max-width: 900px; margin-inline: auto; padding-block: 2rem; }
+  .detail h1 { font-size: clamp(2.5rem, 9vw, 5rem); margin-bottom: 1.2rem; }
+  .hero-image { border: 3px solid var(--charcoal); background: #fff; }
+  .body { max-width: var(--measure); font-size: 1.15rem; margin: 2rem 0; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin: 2rem 0; }
+  .gallery :global(img) { border: 3px solid var(--charcoal); }
+  .purchase { margin: 2.5rem 0; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.6rem; }
+  .buy {
+    display: inline-block;
+    background: var(--green);
+    color: var(--charcoal);
+    border: 3px solid var(--charcoal);
+    padding: 0.7rem 1.3rem;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+  .buy:hover { background: var(--yellow); }
+  .back { margin-top: 3rem; font-family: var(--font-mono); }
+</style>
