@@ -24,5 +24,4 @@ See [docs/adding-a-design.md](docs/adding-a-design.md).
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds and
 deploys to GitHub Pages. The custom domain is pinned by `public/CNAME`. DNS is
-managed separately as code in an OpenTofu config (planned — see the DNS
-implementation plan).
+managed separately as code in an OpenTofu configuration (planned).
