@@ -9,11 +9,11 @@ detail page per design are generated at build time.
 ## Develop
 
 ```bash
-npm install
-npm run dev      # local dev server
-npm run build    # static build → dist/
-npm run check    # type + content checks
-npm test         # unit tests (Vitest)
+pnpm install
+pnpm dev         # local dev server
+pnpm build       # static build → dist/
+pnpm check       # type + content checks
+pnpm test        # unit tests (Vitest)
 ```
 
 ## Add a design
